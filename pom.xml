@@ -39,7 +39,6 @@
 		<Properties DependencyType="Root" Platform="*">
 			<PropertyGroup Label="sdk_win32_TargetDirs">
 				<sdk_win32_RootDir>$(SolutionDir)</sdk_win32_RootDir>
-				<sdk_win32_LibraryDir>$(SolutionDir)target\sdk_win32\outdir\sdk_win32_$(Configuration)_$(Platform)\</sdk_win32_LibraryDir>
 				<sdk_win32_IncludeDir>$(SolutionDir)source\main\include\</sdk_win32_IncludeDir>
 			</PropertyGroup>
 		</Properties>
@@ -47,7 +46,6 @@
 		<Properties DependencyType="Package" Platform="*">
 			<PropertyGroup Label="sdk_win32_TargetDirs">
 				<sdk_win32_RootDir>${Location}</sdk_win32_RootDir> 
-				<sdk_win32_LibraryDir>${Location}libs\</sdk_win32_LibraryDir>
 				<sdk_win32_IncludeDir>${Location}source\main\include\</sdk_win32_IncludeDir>
 			</PropertyGroup>
 		</Properties>
@@ -55,7 +53,6 @@
 		<Properties DependencyType="Source" Platform="*">
 			<PropertyGroup Label="sdk_win32_TargetDirs">
 				<sdk_win32_RootDir>$(SolutionDir)target\sdk_win32\</sdk_win32_RootDir> 
-				<sdk_win32_LibraryDir>$(SolutionDir)target\sdk_win32\target\sdk_win32\outdir\sdk_win32_$(Configuration)_$(Platform)\</sdk_win32_LibraryDir>
 				<sdk_win32_IncludeDir>$(SolutionDir)target\sdk_win32\source\main\include\</sdk_win32_IncludeDir>
 			</PropertyGroup>
 		</Properties>
@@ -76,8 +73,6 @@
 						<AdditionalIncludeDirectories>$(${Name}_IncludeDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
 					</ClCompile>
 					<Link>
-						<AdditionalLibraryDirectories>$(${Name}_LibraryDir);</AdditionalLibraryDirectories>
-						<AdditionalDependencies>#${Name}_DevDebug_$(Platform).lib</AdditionalDependencies>
 					</Link>
 				</ItemDefinitionGroup>
 				<ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DevRelease|Win32'">
@@ -86,8 +81,6 @@
 						<AdditionalIncludeDirectories>$(${Name}_IncludeDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
 					</ClCompile>
 					<Link>
-						<AdditionalLibraryDirectories>$(${Name}_LibraryDir);</AdditionalLibraryDirectories>
-						<AdditionalDependencies>#${Name}_DevRelease_$(Platform).lib</AdditionalDependencies>
 					</Link>
 				</ItemDefinitionGroup>
 				<ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DevFinal|Win32'">
@@ -96,8 +89,6 @@
 						<AdditionalIncludeDirectories>$(${Name}_IncludeDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
 					</ClCompile>
 					<Link>
-						<AdditionalLibraryDirectories>$(${Name}_LibraryDir);</AdditionalLibraryDirectories>
-						<AdditionalDependencies>#${Name}_DevFinal_$(Platform).lib</AdditionalDependencies>
 					</Link>
 				</ItemDefinitionGroup>
 				<ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='TestDebug|Win32'">
@@ -106,8 +97,6 @@
 						<AdditionalIncludeDirectories>$(${Name}_IncludeDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
 					</ClCompile>
 					<Link>
-						<AdditionalLibraryDirectories>$(${Name}_LibraryDir);</AdditionalLibraryDirectories>
-						<AdditionalDependencies>#${Name}_TestDebug_$(Platform).lib</AdditionalDependencies>
 					</Link>
 				</ItemDefinitionGroup>
 				<ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='TestRelease|Win32'">
@@ -116,8 +105,6 @@
 						<AdditionalIncludeDirectories>$(${Name}_IncludeDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
 					</ClCompile>
 					<Link>
-						<AdditionalLibraryDirectories>$(${Name}_LibraryDir);</AdditionalLibraryDirectories>
-						<AdditionalDependencies>#${Name}_TestRelease_$(Platform).lib</AdditionalDependencies>
 					</Link>
 				</ItemDefinitionGroup>
 				<ItemGroup>
